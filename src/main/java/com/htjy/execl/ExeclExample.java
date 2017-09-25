@@ -20,15 +20,23 @@ import java.util.List;
 /**
  * Created by willz on 9/15/2017.
  */
-public class ExeclProcess {
+public class ExeclExample {
     private static String xlsName = "src/resource/test.xls";
     private static String xlsxName = "src/resource/test.xlsx";
 
     public static void main(String[] args) throws IOException, SAXException {
+        readFromExcelAndTransferToList();
+        readFromExcelAndTransferToJson();
+    }
+
+    private static void readFromExcelAndTransferToList() {
         List<Carrier> carrierList = excelToList(xlsName);
         carrierList.stream().forEach((carrier) -> {
             System.out.println(carrier.toString());
         });
+    }
+
+    private static void readFromExcelAndTransferToJson() {
         ExeclToJsonHandler execlToJsonHandler = new ExeclToJsonHandler<Carrier>();
         JSONArray jsonArray = execlToJsonHandler.buildJsonByFileName(Carrier.class, xlsName);
         System.out.println(jsonArray.toString());
