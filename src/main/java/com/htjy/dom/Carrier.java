@@ -7,7 +7,7 @@ public class Carrier {
     private int carrierFamilyId;
     private String carrierFamilyName;
     private int genericCarrierId;
-    private String CarrierName;
+    private String carrierName;
     private String state;
     private String productLine;
     public String getProductLine() {
@@ -52,11 +52,11 @@ public class Carrier {
     }
 
     public String getCarrierName() {
-        return CarrierName;
+        return carrierName;
     }
 
     public void setCarrierName(String carrierName) {
-        CarrierName = carrierName;
+        this.carrierName = carrierName;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class Carrier {
                 "carrierFamilyId=" + carrierFamilyId +
                 ", carrierFamilyName='" + carrierFamilyName + '\'' +
                 ", genericCarrierId=" + genericCarrierId +
-                ", carrierName='" + CarrierName + '\'' +
+                ", carrierName='" + carrierName + '\'' +
                 ", state='" + state + '\'' +
                 ", productLine='" + productLine + '\'' +
                 '}';

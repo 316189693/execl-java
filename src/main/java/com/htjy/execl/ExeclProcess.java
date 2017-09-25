@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.json.JSONArray;
 import org.xml.sax.SAXException;
 
 import java.io.FileInputStream;
@@ -28,6 +29,9 @@ public class ExeclProcess {
         carrierList.stream().forEach((carrier) -> {
             System.out.println(carrier.toString());
         });
+        ExeclToJsonHandler execlToJsonHandler = new ExeclToJsonHandler<Carrier>();
+        JSONArray jsonArray = execlToJsonHandler.buildJsonByFileName(Carrier.class, xlsName);
+        System.out.println(jsonArray.toString());
     }
 
     private static List<Carrier> excelToList(String excelName) {

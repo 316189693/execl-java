@@ -49,7 +49,11 @@
             <artifactId>poi-examples</artifactId>
             <version>3.17-beta1</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20170516</version>
+        </dependency>
     </dependencies>
 
 </project>
